@@ -33,15 +33,13 @@ import './index.css';
 import '../src/services/firebase.js';
 import { ToastContainer } from 'react-toastify';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <Provider store={store}>
-    <PersistGate loading={null}
-                 persistor={persistor}>
-      <BrowserRouter basename="/LearnLingo" future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <App />
-        <ToastContainer />
-      </BrowserRouter>
-    </PersistGate>
-  </Provider>
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter >
+          <App />
+        </BrowserRouter>
+      </PersistGate>
+      <ToastContainer />
+    </Provider>
 );
